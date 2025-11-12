@@ -1,3 +1,18 @@
+# 📰 Cadastro de Notícias e Categorias
+
+Sistema desenvolvido em **Laravel + PHP** para demonstrar cadastro e gerenciamento de **notícias e categorias**.
+
+## 🚀 Como executar o projeto
+
+1. Extraia o arquivo `.zip`.
+2. Abra a pasta do projeto no terminal.
+3. Execute o comando abaixo para iniciar o servidor:
+   ```bash
+ -->  php artisan serv
+
+
+Abaixo uma pequena explicação de como o sistema funciona
+
 Cadastro de Notícias
 
 Aplicação desenvolvida em **PHP (Laravel)** com **Bootstrap 5** para gerenciamento completo de **categorias e notícias**.  
