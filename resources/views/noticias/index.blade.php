@@ -71,7 +71,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $noticia->titulo }}</h5>
                             <p class="card-text mb-1">
-                                <span class="badge bg-secondary">{{ $noticia->categoria->nome }}</span>
+                                <span class="badge bg-secondary">{{ $noticia->categoria->nome ?? 'Sem categoria' }}</span>
                             </p>
                             <p class="card-text text-muted" style="font-size: 0.85rem;">
                                 {{ Str::limit($noticia->resumo, 80) }}

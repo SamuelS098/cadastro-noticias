@@ -21,6 +21,13 @@ class NoticiaController extends Controller
         $ultimoCodigo = Noticia::max('codigo') ?? 0;
         $proximoCodigo = str_pad($ultimoCodigo + 1, 2, '0', STR_PAD_LEFT);
 
+        // 🔧 Ajuste importante: gera a URL pública da imagem
+        foreach ($noticias as $noticia) {
+            if ($noticia->imagem) {
+                $noticia->imagem_url = Storage::url($noticia->imagem);
+            }
+        }
+
         return view('noticias.index', compact('noticias', 'categorias', 'proximoCodigo'));
     }
 
@@ -143,5 +150,14 @@ class NoticiaController extends Controller
 
         return redirect()->route('noticias.index')
             ->with('success', '🗑️ Notícia excluída com sucesso!');
+    }
+
+    /**
+     * 👀 Exibe uma notícia específica (necessário para evitar erro de rota).
+     */
+    public function show($id)
+    {
+        // Evita erro 500 ao tentar acessar /noticias/{id} por engano
+        return abort(404);
     }
 }
